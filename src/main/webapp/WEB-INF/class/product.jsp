@@ -79,7 +79,7 @@
 						<tbody>
 							<c:forEach var="obj" items="${list1}">
 								<tr onclick="modalAction(${obj.no})">
-									<td >${obj.no}</td>
+									<td id="sessionno">${obj.no}</td>
 									<td>${obj.cnt}명</td>
 									<td>${obj.minimum}명</td>
 									<td>${obj.maximum}명</td>
@@ -210,22 +210,11 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal"
 						aria-label="Close"></button>
 				</div>
-				<div class="modal-body">
-					<h6 class="mt-3">현재인원 : </h6>
-					<h6>최소인원 : ${obj2.minimum} </h6>
-					<h6>최대인원 : ${obj2.maximum} </h6>
-					<h6>난이도 : </h6>
-					<hr/>
-					<h6 class="mt-3" >날짜/요일 : </h6>
-					<h6>시간 : </h6>
-					<hr/>
-					<h6 class="mt-3" >할인 : </h6>
-					<h6>추가금액 : </h6>
-			
-					
-					
-					<h4 class="float-end price" id="price">총 금액 : </h4>
-					
+				<div class="modal-body" id="modal1">
+						<p> </p>
+								
+								
+								
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-warning" onclick="">다음페이지</button>
@@ -286,31 +275,30 @@
 	</script>
 	
 	<script>
-	function modalAction(no) {
+	async function modalAction(no) {
 			 	
-		console.log(no)
-		
-		/* var form = document.createElement("form");
-				form.setAttribute("action", "product.do");
-				form.setAttribute("method", "post");
-				form.style.display="block";
-		
-		var input = document.createElement("input");
-				input.setAttribute("type", "hidden");
-				input.setAttribute("name", "sessionno");
-				input.setAttribute("value", Number(no));
 				
-				document.body.appendChild(form);
-				form.appendChild(input);
-				form.submit(); */
-		// rest 로 번호 => 값받기
-		// const {data} = await ();
-				
+		const url = '${pageContext.request.contextPath}/api/class/product.json?no=' + no
+		const headers = {"Content-Type":"application/json"};
+		const {data} = await axios.get(url,{headers});
+		
+		const modal1 = document.getElementById('modal1');
+		var cnt = data.session.cnt;
+		var maximum = data.session.maximum;
+		var discount = data.session.discount;
+		var addprice = data.session.addprice;
+	
+		
+		modal1.innerHTML +=
+			
+			'<h6>' + cnt + '명' +'</h6>'	+
+			'<h6>' + maximum + '</h6>'	+
+			'<h6>' + discount + '</h6>' +	
+			'<h6>' + addprice + '</h6>';	
+			
 		const modal = new bootstrap.Modal(document.getElementById("exampleModal"),{});
-		modal.show();
-		
-		
-	}		
+		modal.show(); 
+	}		 
 	</script>	
 	
 </body>
