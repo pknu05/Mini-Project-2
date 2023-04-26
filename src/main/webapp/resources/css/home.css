@@ -3,6 +3,16 @@
     padding: 0;
 }
 
+hr.style01 {
+	border:none;
+ 	width: auto;
+	height: 52px;
+	margin-top: 0;
+	border-bottom: 1px solid #1f1209;
+	box-shadow: 0 20px 10px -20px #333;
+  	margin: -50px auto 10px;  
+}
+
 /* (1) 로고 */
 .logo {
     font-family: 'Permanent Marker', cursive;
@@ -17,7 +27,7 @@
 .dropdown:hover .dropdown-menu { /* 드롭다운 자동으로 노출*/
     display: block;
     margin-top: 0;
-    
+    max-width: fit-content;
 }
 
 #navbarSupportedContent > .dropdown-menu {

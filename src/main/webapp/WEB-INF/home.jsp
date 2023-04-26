@@ -17,12 +17,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DynaPuff&family=Permanent+Marker&display=swap" rel="stylesheet">
     <!-- CSS -->
-    <link rel='stylesheet' href="${pageContext.request.contextPath}/resources/css/home.css"/>
+    <link rel='stylesheet' href="${pageContext.request.contextPath}/resources/css/home.css?ver=2"/>
 </head>
 
 <body>
 	<!-- header -->
     <jsp:include page="header.jsp"></jsp:include>
+    <hr class="style01">
     
     <div>
          <!-- 슬라이드쇼 -->
@@ -98,10 +99,52 @@
                         </div>
                     </div>
                     <!-- / Post-->
+                    <!-- Post-->
+                    <div class="col-12 col-sm-6 col-lg-4 post">
+                        <div
+                            class="d-flex h-100 bg-white rounded card overflow-hidden shadow-lg position-relative hover-lift">
+                            <picture>
+                                <img class="img-fluid" src="" alt="">
+                            </picture>
 
-                </div>
+                            <div class="card-body p-4 p-lg-5">
+                                <p class="card-title fw-medium mb-4"></p>
+                                <a href="#"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / Post-->
+                    <!-- Post-->
+                    <div class="col-12 col-sm-6 col-lg-4 post">
+                        <div
+                            class="d-flex h-100 bg-white rounded card overflow-hidden shadow-lg position-relative hover-lift">
+                            <picture>
+                                <img class="img-fluid" src="" alt="">
+                            </picture>
 
-                
+                            <div class="card-body p-4 p-lg-5">
+                                <p class="card-title fw-medium mb-4"></p>
+                                <a href="#"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / Post-->
+                    <!-- Post-->
+                    <div class="col-12 col-sm-6 col-lg-4 post">
+                        <div
+                            class="d-flex h-100 bg-white rounded card overflow-hidden shadow-lg position-relative hover-lift">
+                            <picture>
+                                <img class="img-fluid" src="" alt="">
+                            </picture>
+
+                            <div class="card-body p-4 p-lg-5">
+                                <p class="card-title fw-medium mb-4"></p>
+                                <a href="#"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / Post-->
+                </div>   
             </div>
         </div>
         <!-- / 카테고리-->

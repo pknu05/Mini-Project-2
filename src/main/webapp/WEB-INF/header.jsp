@@ -1,23 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<style>
 
-hr {
-  	border:none;
- 	width: auto;
-	height: 52px;
-	margin-top: 0;
-	border-bottom: 1px solid #1f1209;
-	box-shadow: 0 20px 10px -20px #333;
-  	margin: -50px auto 10px; 
-}
-</style>
 
 <header>
+	
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
-
+			
             <!-- (1) 로고 -->
             <a class="navbar-brand d-flex align-items-center lh-1 me-10 transition-opacity opacity-75-hover" href="./index.html">
                 <!-- 로고 아이콘 추가예정 -->
@@ -64,5 +54,4 @@ hr {
             <!-- / 클래스등록&로그인 -->
         </div>
     </nav>
-    <hr>
 </header>
