@@ -38,17 +38,21 @@
 		<div class="row mt-5 mb-5 d-flex flex-nowrap">
 			<div class="row col-6 mx-1 " id="main_image" style="height: 600px;">
 				<div >
-				<img class="images mt-3 mx-1" src="${pageContext.request.contextPath}/resources/images/design.jpg" >
+				<img class="images mt-3 mx-1" id="mainimage"
+				 src="${pageContext.request.contextPath}/resources/images/design.jpg" >
 				</div>
 					<div class= "mt-3 d-flex flex-row justify-content-between" style=" width:600px;  height: 150px;">
 						<div class="images2">
-						<img class="images1 mt-2 " src="${pageContext.request.contextPath}/resources/images/design.jpg" >
+						<img class="images1 mt-2 " id="image1"
+						src="${pageContext.request.contextPath}/resources/images/베이킹.jpg"  onclick="change1()">
 						</div >
 						<div class="images2">
-						<img class="images1 mt-2 " src="${pageContext.request.contextPath}/resources/images/design.jpg" >
+						<img class="images1 mt-2 " id="image2"
+						src="${pageContext.request.contextPath}/resources/images/스포츠.jpg" onclick="change2()" >
 						</div>
 						<div class="images2">
-						<img class="images1 mt-2 " src="${pageContext.request.contextPath}/resources/images/design.jpg" >
+						<img class="images1 mt-2  " id="image3"
+						src="${pageContext.request.contextPath}/resources/images/드로잉.jpg" onclick="change3()" >
 						</div>	
 						</div>
 			</div>
@@ -78,7 +82,7 @@
 						</thead>
 						<tbody>
 							<c:forEach var="obj" items="${list1}">
-								<tr onclick="modalAction(${obj.no})">
+								<tr onclick="modalAction(${obj.no},${obj.price})">
 									<td id="sessionno">${obj.no}</td>
 									<td>${obj.cnt}명</td>
 									<td>${obj.minimum}명</td>
@@ -113,28 +117,27 @@
 				<div class="col-4 " style="position: relative; top: -20px; left: -20px;">
 					<div style="width: 600px; margin-right: 100px;">
 						<h6><i class="bi bi-universal-access mx-1"></i>
-						난이도 :</h6>
+						난이도 : ${obj.classlevel}</h6>
 					</div>
 					<div style="width: 600px; margin-right: 100px;">
 						<h6><i class="bi bi-clock mx-1"></i>
-						시간 :</h6>
+						시간 :  ${obj.classstart} ~ ${obj.classend}
+						</h6>
 					</div>
-					
 					<div style="width: 600px; margin-right: 100px;">
 						<h6><i class="bi bi-cash-coin mx-1"></i>
-						가격 :</h6>
+						가격 : ${obj.price}원
+						 </h6>
 					</div>
-					
 					<div style="width: 600px; height: 100px; margin-right: 100px;">
 						<h6> <i class="bi bi-geo-alt-fill mx-1"></i>
-						주소 :</h6>
+						주소 :  ${obj.address1} ${obj.address2} ${obj.address3} </h6>
 					</div>
 					<div style="width: 600px; height: 50px; margin-right: 100px;">
 						<h6> <i class="bi bi-calendar3-event mx-1"></i>
-						등록날짜 :</h6>
+						등록날짜 : ${obj.regdate} </h6>
 					</div>
 				</div>
-	
 			</div>
 		</div>
 		<hr/>
@@ -211,10 +214,16 @@
 						aria-label="Close"></button>
 				</div>
 				<div class="modal-body" id="modal1">
-						<p> </p>
-								
-								
-								
+					
+						<h6 id="level" > 헤헤헤헤 </h6>
+						<h6 id="cnt" > 헤헤헤헤 </h6>
+						<h6 id="maximum" > 헤헤헤헤 </h6>
+						<h6 id="price" >금액: ${obj.price}원<span class="mx-2" id="discountprice" style="color: red;"></span></h6>
+						<h6 id="discount" >하하</h6>
+						<h6 id="addprice" style="color: blue;" > 헤헤헤헤 </h6>
+						<h1 class="float-end mx-2" id="totalprice" style="text-decoration: underline; 
+						text-decoration-thickness : 2px; text-underline-offset : 3px; "> 헤헤헤헤 </h1>
+						
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-warning" onclick="">다음페이지</button>
@@ -275,31 +284,77 @@
 	</script>
 	
 	<script>
-	async function modalAction(no) {
+	async function modalAction(no,price) {
 			 	
 				
 		const url = '${pageContext.request.contextPath}/api/class/product.json?no=' + no
 		const headers = {"Content-Type":"application/json"};
 		const {data} = await axios.get(url,{headers});
 		
-		const modal1 = document.getElementById('modal1');
+		/* const modal1 = document.getElementById('modal1');
 		var cnt = data.session.cnt;
 		var maximum = data.session.maximum;
 		var discount = data.session.discount;
 		var addprice = data.session.addprice;
-	
 		
-		modal1.innerHTML +=
+		 modal1.innerHTML +=
 			
 			'<h6>' + cnt + '명' +'</h6>'	+
 			'<h6>' + maximum + '</h6>'	+
 			'<h6>' + discount + '</h6>' +	
-			'<h6>' + addprice + '</h6>';	
+			'<h6>' + addprice + '</h6>';    기록이 남고 , innertext는 기록이 사라지네*/
+			
+		var cnt = document.getElementById("cnt");
+		var maximum = document.getElementById("maximum");
+		var discount = document.getElementById("discount");
+		var addprice = document.getElementById("addprice");
+		var level = document.getElementById("level");
+		var total = document.getElementById("totalprice");
+		
+		var dicountprice = price * data.session.discount;
+		var totalprice = price - dicountprice + data.session.addprice;
+		
+		console.log(price);
+		console.log(totalprice);
+		
+		level.innerText = "난이도 : " + data.session.level + "";
+		cnt.innerText = "현재인원 : " + data.session.cnt + "명";
+		maximum.innerText = "최대인원 : " + data.session.maximum + "명";
+		discount.innerText = "할인 : " + data.session.discount + "%";
+		discountprice.innerText = "( -" + dicountprice + " )";
+		addprice.innerText = "추가금액 : " + data.session.addprice + "원";
+		total.innerText = "총금액 : " + totalprice + "원" ;
 			
 		const modal = new bootstrap.Modal(document.getElementById("exampleModal"),{});
 		modal.show(); 
 	}		 
 	</script>	
+	
+	<script>
+	function change1() {
+		console.log(1)
+		const mainimage = document.getElementById("mainimage");
+		const image1 = document.getElementById("image1");
+		
+		mainimage.src = image1.src;
+	}
+	function change2() {
+		console.log(1)
+		const mainimage = document.getElementById("mainimage");
+		const image2 = document.getElementById("image2");
+		
+		mainimage.src = image2.src;
+	}
+	function change3() {
+		console.log(1)
+		const mainimage = document.getElementById("mainimage");
+		const image3 = document.getElementById("image3");
+		
+		mainimage.src = image3.src;
+	}
+	
+	</script>
+	
 	
 </body>
 

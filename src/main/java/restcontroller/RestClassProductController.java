@@ -17,7 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import mapper.ReviewMapper;
 
 @WebServlet(urlPatterns = { "/api/class/product.json" })
-public class RestBoardSelectController extends HttpServlet {
+public class RestClassProductController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Gson gson = new Gson(); // 라이브러리를 이용한 객체 생성
 
