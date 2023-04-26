@@ -28,5 +28,9 @@ public interface ApplyStatusMapper {
 	})
 	public int insertApplyStatus(@Param("obj") ApplyStatus obj);
 	
+	@Select({
+		" SELECT * FROM ApplyStatus  "
+	})
+	public List<ApplyStatus> selectApplyList();
 	
 }

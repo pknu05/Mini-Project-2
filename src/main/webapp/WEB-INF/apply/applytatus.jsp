@@ -29,14 +29,26 @@
 		<table class="table table-hover">
 			<thead>
 				<tr>
-					<th scope="col">글번호</th>
+					<th scope="col">번호(시퀀스)</th>
 					<th scope="col">신청번호</th>
 					<th scope="col">신청처리상태</th>
 					<th scope="col">상태등록일자</th>
 				</tr>
 			</thead>
-			
+			   <tbody>
+				<c:forEach var="obj" items="${list}">
+					<tr>
+						<td>${obj.no}</td>
+						<td>${obj.applyno}</td>
+						<td>${obj.chk}</td>
+						<td>${obj.regdate}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
 		</table>
+
+		<a class="btn btn-sm btn-primary" href="home.do">홈화면으로</a> <a
+			class="btn btn-sm btn-primary" href="apply.do">이전화면으로</a>
 	</div>
 
 

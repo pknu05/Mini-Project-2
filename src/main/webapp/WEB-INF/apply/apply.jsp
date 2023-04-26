@@ -34,7 +34,7 @@
 	  	                   <!--   <input type="text"  class="form-control" id="person" placeholder="참여인원수 x 가격."  value="" required> -->
 	  	                    <div class="invalid-feedback">Valid first name is required.</div>
 	  	                    <form name='sumform'>
-								<input type='text'  id='person1' placeholder="참여인원수" size="15" onkeyup='call()'> x
+								<input type='text'  id='person1' max="30" min="1" placeholder="참여인원수" size="15" onkeyup='call()'> x
 								<input type='text'  id='price2' placeholder="가격" size="15" onkeyup='call()'> =
 								<input type='text'  placeholder="참여인원수 x 가격." size="20" id='total price' >(원)
 							</form>
@@ -44,7 +44,7 @@
 	                
 	                  	
 				  <input type="button" value="신청완료" class="btn btn-sm btn-primary" onclick="ApplyInsertAction()"/> 
-                  <input type="button" value="신청취소" class="btn btn-sm btn-primary" onclick="ApplyAction()"/> 
+                  <a class="btn btn-sm btn-primary" href="home.do">홈화면으로</a>
               </form>
          </div>
     </main>
