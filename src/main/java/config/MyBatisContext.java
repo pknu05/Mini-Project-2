@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.ibatis.transaction.TransactionFactory;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
 
+import mapper.ApplyStatusViewMapper;
 import mapper.SessionMapper;
 
 
@@ -41,6 +42,7 @@ public class MyBatisContext {
 			// 매퍼 등록 -> config.add
 			// config.addMapper(BoardMapper.class);
 			config.addMapper(SessionMapper.class);
+			config.addMapper(ApplyStatusViewMapper.class);
 			
 			
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(config);

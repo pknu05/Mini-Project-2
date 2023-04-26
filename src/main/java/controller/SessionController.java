@@ -3,12 +3,15 @@ package controller;
 import java.io.IOException;
 import java.util.List;
 
+import dto.ApplyStatusView;
 import dto.Session;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import service.ApplyStatusViewService;
+import service.ApplyStatusViewServiceImpl;
 import service.SessionService;
 import service.SessionServiceImpl;
 
@@ -16,6 +19,7 @@ import service.SessionServiceImpl;
 public class SessionController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private SessionService sService = new SessionServiceImpl();
+	private ApplyStatusViewService aService = new ApplyStatusViewServiceImpl();
        
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,6 +44,16 @@ public class SessionController extends HttpServlet {
 		}
 		
 		if(Integer.parseInt(menu) == 2) {
+			//long classcode = Long.parseLong(request.getParameter("classcode"));
+			long classcode = 111;
+			try {
+				List<ApplyStatusView> applylist = aService.selectApplyStatusViewList(classcode);
+				request.setAttribute("applylist", applylist);
+			} 
+			catch (Exception e) {
+				e.printStackTrace();
+			}
+			
 			
 		}
 		

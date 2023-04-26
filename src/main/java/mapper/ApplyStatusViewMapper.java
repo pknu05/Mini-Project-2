@@ -12,8 +12,8 @@ import dto.ApplyStatusView;
 public interface ApplyStatusViewMapper {
 	
 	@Select({
-		" SELECT * FROM APPLYSTATUSVIEW WHERE CLASSCODE=#{obj.classcode} ORDER BY REGDATE DESC "
+		" SELECT * FROM APPLYSTATUSVIEW WHERE CLASSCODE=#{classcode} ORDER BY REGDATE DESC "
 	})
-	public List<ApplyStatusViewMapper> selectApplyStatusViewList(@Param("obj") ApplyStatusView obj);
+	public List<ApplyStatusView> selectApplyStatusViewList(@Param("classcode") long classcode);
 
 }
