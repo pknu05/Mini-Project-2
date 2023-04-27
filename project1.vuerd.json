@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 6000,
     "height": 6000,
-    "scrollTop": -235.66669938299128,
-    "scrollLeft": -3119.6666522953146,
-    "zoomLevel": 0.9,
+    "scrollTop": -904.6666993829913,
+    "scrollLeft": -2372.6666522953146,
+    "zoomLevel": 0.7,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -258,7 +258,7 @@
           "active": false,
           "left": 2408.2921,
           "top": 84.4307,
-          "zIndex": 7,
+          "zIndex": 5,
           "widthName": 60,
           "widthComment": 71.5703125,
           "color": "#FF9800"
@@ -367,7 +367,7 @@
           "active": false,
           "left": 3298.3911,
           "top": 136.3807,
-          "zIndex": 6,
+          "zIndex": 4,
           "widthName": 60,
           "widthComment": 67,
           "color": "#795548"
@@ -499,7 +499,7 @@
           "active": false,
           "left": 3890.3469,
           "top": 453.4677,
-          "zIndex": 13,
+          "zIndex": 10,
           "widthName": 60,
           "widthComment": 67,
           "color": "#9E9E9E"
@@ -905,9 +905,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 2408.0944,
-          "top": 590.7748,
-          "zIndex": 12,
+          "left": 2409.3444,
+          "top": 502.0248,
+          "zIndex": 14,
           "widthName": 98.484375,
           "widthComment": 120,
           "color": "#00FF42"
@@ -970,7 +970,7 @@
           "active": false,
           "left": 2901.8269,
           "top": 1391.2318,
-          "zIndex": 10,
+          "zIndex": 8,
           "widthName": 84.43701171875,
           "widthComment": 120,
           "color": "#1300FF"
@@ -1033,7 +1033,7 @@
           "active": false,
           "left": 2052.4405,
           "top": 1384.8898,
-          "zIndex": 9,
+          "zIndex": 7,
           "widthName": 60,
           "widthComment": 119,
           "color": "#673AB7"
@@ -1119,7 +1119,7 @@
           "active": false,
           "left": 2078.8868,
           "top": 1107.7501,
-          "zIndex": 8,
+          "zIndex": 6,
           "widthName": 69.869140625,
           "widthComment": 120,
           "color": "#F586EE"
@@ -1320,7 +1320,7 @@
           "active": false,
           "left": 3445.5229,
           "top": 988.6318,
-          "zIndex": 4,
+          "zIndex": 3,
           "widthName": 79.21923828125,
           "widthComment": 80,
           "color": "#FFEB3B"
@@ -1406,7 +1406,7 @@
           "active": false,
           "left": 2892.0044,
           "top": 1120.3351,
-          "zIndex": 11,
+          "zIndex": 9,
           "widthName": 94.83447265625,
           "widthComment": 120,
           "color": "#03A9F4"
@@ -1722,7 +1722,7 @@
           "active": false,
           "left": 3258.4071,
           "top": 554.0289,
-          "zIndex": 16,
+          "zIndex": 13,
           "widthName": 60,
           "widthComment": 60,
           "color": "#F44336"
@@ -1831,7 +1831,7 @@
           "active": false,
           "left": 3885.3243,
           "top": 100.1521,
-          "zIndex": 14,
+          "zIndex": 11,
           "widthName": 81.51708984375,
           "widthComment": 93,
           "color": "#607D8B"
@@ -2009,7 +2009,7 @@
           "active": false,
           "left": 1776.4852,
           "top": 692.4996,
-          "zIndex": 3,
+          "zIndex": 2,
           "widthName": 105.13037109375,
           "widthComment": 120,
           "color": "#009688"
@@ -2035,36 +2035,12 @@
         "id": "69e602f6-a3b7-46d4-87cd-2f81d0c816a7"
       },
       {
-        "value": "제공 및 유의사항\n- 제공 : 와이파이, 주차공간, 포토존, 반려동물\n- 건강 및 안전사항 : 손세정제, 실내소독, 거리두기",
-        "ui": {
-          "active": false,
-          "left": 2834.055559860334,
-          "top": 414.78704163616084,
-          "zIndex": 2,
-          "width": 363,
-          "height": 100
-        },
-        "id": "d5ebeee2-260c-47f1-a9e9-0935a89fbb16"
-      },
-      {
-        "value": "최종 : 장바구니 /위시리스트 고려",
-        "ui": {
-          "active": false,
-          "left": 4304.949095372618,
-          "top": 98.97684171998264,
-          "zIndex": 5,
-          "width": 127,
-          "height": 100
-        },
-        "id": "588cd803-d593-4817-b5ab-3a3fb87773c5"
-      },
-      {
         "value": "Session ( classlevel → 1 or 2 or 3,  0 < discount ≤1 )",
         "ui": {
           "active": false,
           "left": 3775.4444300730906,
           "top": 695.7778104941023,
-          "zIndex": 15,
+          "zIndex": 12,
           "width": 332,
           "height": 100
         },
@@ -2144,8 +2120,8 @@
           "columnIds": [
             "7baa49e9-a21b-426d-bece-b3416e85f8d6"
           ],
-          "x": 2538.5029693359375,
-          "y": 1008.2748,
+          "x": 2539.7529693359375,
+          "y": 919.5248,
           "direction": "bottom"
         },
         "constraintName": "fk_localcate_to_classproduct",
@@ -2170,8 +2146,8 @@
           "columnIds": [
             "e5198f63-9935-49dd-8ecf-ac7e735dceab"
           ],
-          "x": 2799.3201080078125,
-          "y": 1008.2748,
+          "x": 2800.5701080078125,
+          "y": 919.5248,
           "direction": "bottom"
         },
         "constraintName": "fk_actdetailcate_to_classproduct",
@@ -2187,8 +2163,8 @@
           "columnIds": [
             "74f63af8-90b0-4032-aaef-e53a888c2515"
           ],
-          "x": 2929.72867734375,
-          "y": 695.1498,
+          "x": 2930.97867734375,
+          "y": 606.3998,
           "direction": "right"
         },
         "end": {
@@ -2213,8 +2189,8 @@
           "columnIds": [
             "74f63af8-90b0-4032-aaef-e53a888c2515"
           ],
-          "x": 2929.72867734375,
-          "y": 903.8998,
+          "x": 2930.97867734375,
+          "y": 815.1498,
           "direction": "right"
         },
         "end": {
@@ -2300,8 +2276,8 @@
           "columnIds": [
             "48519fab-e83d-4bb8-8957-cb51ec113167"
           ],
-          "x": 2668.911538671875,
-          "y": 590.7748,
+          "x": 2670.161538671875,
+          "y": 502.0248,
           "direction": "top"
         },
         "constraintName": "fk_member_to_classproduct",
@@ -2317,8 +2293,8 @@
           "columnIds": [
             "74f63af8-90b0-4032-aaef-e53a888c2515"
           ],
-          "x": 2408.0944,
-          "y": 799.5248,
+          "x": 2409.3444,
+          "y": 710.7748,
           "direction": "left"
         },
         "end": {
