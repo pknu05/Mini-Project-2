@@ -16,15 +16,12 @@ import mapper.ReviewMapper;
 public class SelectInsertController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		
+
 		ReviewMapper mapper = MyBatisContext.getSqlSession().getMapper(ReviewMapper.class);
 		List<Review> list = mapper.selectReviewAll();
-		
+
 		request.setAttribute("list", list);
 
 		request.getRequestDispatcher("/WEB-INF/review/selectreview.jsp").forward(request, response);
@@ -33,8 +30,16 @@ public class SelectInsertController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
+		Long no = Long.parseLong(request.getParameter("no"));
+		System.out.println(no);
+		ReviewMapper mapper = MyBatisContext.getSqlSession().getMapper(ReviewMapper.class);
+		int ret = mapper.deleteReviewOne(no);
 
-		
-
+		if (ret == 1) {
+			response.sendRedirect("selectreview.do");
+		} 
+		else {
+			response.sendRedirect("selectreview.do");
+		}
 	}
 }

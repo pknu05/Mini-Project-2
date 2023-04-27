@@ -44,7 +44,7 @@
 					<div class= "mt-3 d-flex flex-row justify-content-between" style=" width:600px;  height: 150px;">
 						<div class="images2">
 						<img class="images1 mt-2 " id="image1"
-						src="${pageContext.request.contextPath}/resources/images/베이킹.jpg"  onclick="change1()">
+						src="${pageContext.request.contextPath}/resources/images/design.jpg"  onclick="change1()">
 						</div >
 						<div class="images2">
 						<img class="images1 mt-2 " id="image2"
@@ -56,7 +56,7 @@
 						</div>	
 						</div>
 			</div>
-			<div class="col-5 mt-3 mx-3" id="calendar"  >
+			<div class="col-5 mt-3 mx-3 " id="calendar" style="position: fixed; right: 300PX; z-index: 10;"  >
 			<div class="row">
 			<div class="mt-3">
 				<!-- <button type="button" class="btn btn-primary float-end mx-1" data-bs-toggle="modal"
@@ -178,7 +178,7 @@
 			</thead>
 			<tbody>
 				<c:forEach var="obj" items="${list}">
-					<tr>
+					<tr style="font-size: 11px;">
 						<td scope="row">${obj.no}</td>
 						<td><a href="#">${obj.title}</a></td>
 						<td>${obj.content}</td>
@@ -193,7 +193,10 @@
 				<ul id="pagination-demo" class="pagination"></ul>
 			</div>
 		</div>
+		
 		</div>
+		<a href="${pageContext.request.contextPath}/review/insertreview.do" class="btn btn-primary float-end mx-2" 
+		style="position: relative ; bottom: -8px; right: -40px ">글쓰기</a>
 		</div>
 		</div>
 	</div>

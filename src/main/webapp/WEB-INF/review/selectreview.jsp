@@ -31,47 +31,44 @@
 	<jsp:include page="../header.jsp"></jsp:include>
 	<hr />
 	<div class="container">
-		<h2 class="float-start mb-4"> 리뷰게시판</h2>
-		<div class="text-right float-end" style="width: 395px; margin-top: 10px;;">
-		
-			<form class="row g-2" id="search">
-				<div class="col-auto">
-					<input type="text" class="form-control" placeholder="검색어"
-						style="width: 300px;" />
-				</div>
-				<div class="col-auto">
-					<input type="submit" class="btn btn-primary" value="검색" />
-				</div>
-				
+		<h2 class="float-start mb-4">리뷰게시판</h2>
+		<div class="text-right float-end"
+			style="width: 395px; margin-top: 10px;"></div>
+		<div>
+			<form action="${pageContext.request.contextPath}/review/selectreview.do" method="post">
+				<table class="table table-hover" style="margin-bottom: 110px;">
+					<thead>
+						<tr>
+							<th scope="col">신청번호</th>
+							<th scope="col">제목</th>
+							<th scope="col">내용</th>
+							<th scope="col">평점</th>
+							<th scope="col">날짜</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="obj" items="${list}">
+							<tr>
+								<td scope="row" id="no">${obj.no}</td>
+								<td><a href="#">${obj.title}</a></td>
+								<td>${obj.content}</td>
+								<td>${obj.rating}</td>
+								<td>${obj.regdate}</td>
+
+								<td style="width: 8px;">
+								<input type="text" name="no" value="${obj.no}" style="display: none;"/><input type="submit"
+									class="btn btn-primary" value="삭제" ></td>
+
+								<!--<td style="width: 8px;"><input type="button" class="btn btn-primary" value="수정"></td>-->
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
 			</form>
+			<a href="insertreview.do" class="btn btn-primary float-end"
+				style="position: relative; top: -80px;">글쓰기</a>
 		</div>
-		<table class="table table-hover" >
-			<thead>
-				<tr >
-					<th scope="col">신청번호</th>
-					<th scope="col">제목</th>
-					<th scope="col">내용</th>
-					<th scope="col">평점</th>
-					<th scope="col">날짜</th>
-					<th scope="col"></th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="obj" items="${list}">
-					<tr>
-						<td scope="row">${obj.no}</td>
-						<td><a href="#">${obj.title}</a></td>
-						<td>${obj.content}</td>
-						<td>${obj.rating}</td>
-						<td>${obj.regdate}</td>
-						<td style="width: 8px;"><input type="button" class="btn btn-primary" value="삭제" ></td>
-						<td style="width: 8px;"><input type="button" class="btn btn-primary" value="수정"></td>
-							
-					</tr>
-				</c:forEach>
-			</tbody>	
-		</table>
-		<a href="insertreview.do" class="btn btn-primary float-end" >글쓰기</a>
 	</div>
 
 
@@ -105,6 +102,17 @@
 
 	<!-- footer -->
 	<jsp:include page="../footer.jsp"></jsp:include>
+
+<script>
+function deletereview() {
+	const form = document.getElementById("form1");
+	form.submit();
+}
+
+
+</script>
+
+
 
 </body>
 

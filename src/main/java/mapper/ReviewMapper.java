@@ -53,8 +53,8 @@ public interface ReviewMapper {
 	
 	
 	@Delete({
-		" DELETE from address where memberid = #{obj.memberid} and no = ${obj.no}"		
+		" DELETE from REVIEW where no = ${no}"		
 	})
-	public int deleteReviewOne(@Param("obj") Review obj);
+	public int deleteReviewOne(long no);
 	
 }

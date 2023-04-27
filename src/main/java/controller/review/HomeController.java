@@ -18,7 +18,7 @@ public class HomeController extends HttpServlet {
 			throws ServletException, IOException {
 		
 
-		request.getRequestDispatcher("/WEB-INF/review/home.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

@@ -66,8 +66,7 @@
 						<hr />
 					</div>				
 					<div class="twobutton" style="float: right;">
-						<a href="home.do" class="btn btn-primary" >취소하기</a>
-						
+						<a href="${pageContext.request.contextPath}/review/home.do" class="btn btn-primary" >홈으로</a>
 							<input class="btn btn-primary" type="button" value="등록하기" onclick="writeReview()" />
 					</div>
 					</form>
