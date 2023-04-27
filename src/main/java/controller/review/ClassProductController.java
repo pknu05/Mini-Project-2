@@ -7,7 +7,6 @@ import config.MyBatisContext;
 import dto.ClassSessionView;
 import dto.Classproduct;
 import dto.Review;
-import dto.Session;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -25,7 +24,8 @@ public class ClassProductController extends HttpServlet {
 			throws ServletException, IOException {
 		
 		long classcode = 107;
-			
+		
+		// 매퍼x -> 서비스 o 햐야함
 		ReviewMapper mapper = MyBatisContext.getSqlSession().getMapper(ReviewMapper.class);
 		
 		List<ClassSessionView> list1 = mapper.ClassSessionViewSelect(classcode);

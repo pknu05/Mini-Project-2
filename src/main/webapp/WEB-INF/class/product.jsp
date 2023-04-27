@@ -82,7 +82,7 @@
 						</thead>
 						<tbody>
 							<c:forEach var="obj" items="${list1}">
-								<tr onclick="modalAction(${obj.no},${obj.price})">
+								<tr onclick="modalAction(${obj.no},${obj.price},${obj.classdate},${obj.classlevel})">
 									<td id="sessionno">${obj.no}</td>
 									<td>${obj.cnt}명</td>
 									<td>${obj.minimum}명</td>
@@ -287,9 +287,8 @@
 	</script>
 	
 	<script>
-	async function modalAction(no,price) {
-			 	
-				
+	async function modalAction(no,price,classdate,classlevel) {
+		
 		const url = '${pageContext.request.contextPath}/api/class/product.json?no=' + no
 		const headers = {"Content-Type":"application/json"};
 		const {data} = await axios.get(url,{headers});
@@ -320,7 +319,7 @@
 		console.log(price);
 		console.log(totalprice);
 		
-		level.innerText = "난이도 : " + data.session.level + "";
+		level.innerText = "난이도 : " + classlevel + "";
 		cnt.innerText = "현재인원 : " + data.session.cnt + "명";
 		maximum.innerText = "최대인원 : " + data.session.maximum + "명";
 		discount.innerText = "할인 : " + data.session.discount + "%";
