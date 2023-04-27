@@ -988,10 +988,27 @@
 	function prevMenu5() {
 		$('#menu4').css('display', 'block');
 		$('#menu5').css('display', 'none');
+		
 	}
 	
  	function insertClass() {
  		
+ 	
+ 		/* button click 색상유지 함수 */
+		const nonClick = document.querySelectorAll(".non-click");
+
+		function handleClick(event) {
+		  // div에서 모든 "click" 클래스 제거
+		  nonClick.forEach((e) => {
+		    e.classList.remove("click");
+		  });
+		  // 클릭한 div만 "click"클래스 추가
+		  event.target.classList.add("click");
+		}
+		
+		nonClick.forEach((e) => {
+		  e.addEventListener("click", handleClick);
+		});
  		// 1. 아이디 선택자
  		
  		const cate1 = $('#cate1');
@@ -1090,7 +1107,7 @@
 			return false;
 		}
 		
-	/* 	if( content_length2 < 30) {
+		if( content_length2 < 30) {
 			alert("클래스 소개를 작성하세요.");
 			pageintro();
 			return false;
@@ -1099,7 +1116,8 @@
 		if( content_length3 < 30) {
 			alert("커리큘럼 내용을 작성하세요.");
 			pagecorri();
-			return false; */
+			return false; 
+		} 
  		
  		if( price.value.length <= 0) {
 			alert("금액을 입력하세요.");
