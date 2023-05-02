@@ -24,4 +24,6 @@ public class Member {
   private Date regdate;
   // 회원가입여부(0,1)
   private int chk;
+  
+  private String newpassword;
 }

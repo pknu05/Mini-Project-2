@@ -9,11 +9,11 @@ public class Session {
   // 시퀀스
   private long no;
   // 현재신청인원
-  private int cnt;
+  private long cnt;
   // 최소신청인원
-  private int minimum;
+  private long minimum;
   // 최대신청인원
-  private int maximum;
+  private long maximum;
   // 날짜
   private String classdate;
   // 요일
@@ -25,9 +25,9 @@ public class Session {
   // 할인률
   private float discount;
   // 클래스 추가금액
-  private int addprice;
+  private long addprice;
   // 클래스 난이도(입문자, 경험자)
-  private String level;
+  private String classlevel;
   // 등록일자
   private Date regdate;
   // 클래스 코드(시퀀스)

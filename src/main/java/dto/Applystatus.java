@@ -7,6 +7,7 @@ import lombok.Data;
 //신청상태테이블
 @Data
 public class Applystatus {
+	
 private long no;
 // 신청번호(시퀀스)
 private long applyno;
@@ -14,4 +15,5 @@ private long applyno;
 private int chk;
 // 상태등록일자
 private Date regdate;
+
 }

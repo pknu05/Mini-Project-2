@@ -25,6 +25,10 @@ public class Classproduct {
 	private String longitude;
 	// 가격
 	private long price;
+	// 강사소개
+	private String instructor;
+	// 상호명
+	private String nickname;
 	// 소개글
 	private String intro;
 	// 커리큘럼
@@ -39,6 +43,6 @@ public class Classproduct {
 	private long localcode;
 	// 액티비티디테일카테고리
 	private long actcode;
-	// 회원아이디(시퀀스)
+	// 회원아이디
 	private String memberid;
 }

@@ -1,9 +1,8 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<footer class="bg-dark">
+<footer class="bg-dark mt-auto">
     <div class="container">
         <!-- footer top -->
         <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-center">
@@ -35,7 +34,7 @@
         <!-- / footer menu -->
 
         <!-- Footer bottom-->
-        <div class="small text-white opacity-50 mb-2 mb-md-0">All rights reserved &copy Special day 2023</div>
+        <div class="small text-white opacity-50 mb-2">All rights reserved &copy Special day 2023</div>
         <!-- Footer bottom-->
     </div>
 </footer>
