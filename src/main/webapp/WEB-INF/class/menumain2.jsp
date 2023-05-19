@@ -14,44 +14,49 @@
 	href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" />
 <!-- style css -->
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/menumain.css">
+	href="${pageContext.request.contextPath}/resources/css/menumain2.css">
 
 </head>
 <style>
-.main {
-	height: 100%;
-	display: flex;
-}
+ body{
+ 	
+	height: 100vh;
+ }
 </style>
 
+	
 <body>
 	<!-- Header 영역 -->
 	<jsp:include page="../header.jsp"></jsp:include>
 	
-			
-	<!-- main 영역 -->
-		<div class="main col-12">
-
-	<!-- sidebar 영역 -->
-	<nav id="sidebarMenu" class="sidebar">
-		<div class="left col-4 m-4" id="btn_cate">
-			<div class="left2 m-4">
-				<button class="btn_c non-click btn-outline-success m-3" onclick="pagecate()">1STEP. 카테고리</button>
-				<br />
-				<button class="btn_c non-click btn-outline-success m-3" onclick="pageinstructor()">2STEP. 강사소개</button>
-				<br />
-				<button class="btn_c non-click btn-outline-success m-3" onclick="pageintro()">3STEP. 클래스소개</button>
-				<br />
-				<button class="btn_c non-click btn-outline-success m-3" onclick="pagecorri()">4STEP. 커리큘럼</button>
-				<br />
-				<button class="btn_c non-click btn-outline-success m-3" onclick="pageprice()">5STEP. 가격</button>
-				<br />
-			</div>
-		</div>
-	</nav>
+	
+	<div class="container-fluied">
+		<div class="row">
 		
-		<!-------------------------------------------------  -->
-	<div class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="content">
+		  <!-- Navigation -->
+			<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">	
+	
+			<div class="position-sticky pt-3">
+			
+			<div class="nav flex-column">
+				<div class="left2 m-4">
+					<button class="btn_c non-click btn-outline-success m-3" onclick="pagecate()">카테고리</button>
+					<br />
+					<button class="btn_c non-click btn-outline-success m-3" onclick="pageinstructor()">강사소개</button>
+					<br />
+					<button class="btn_c non-click btn-outline-success m-3" onclick="pageintro()">클래스소개</button>
+					<br />
+					<button class="btn_c non-click btn-outline-success m-3" onclick="pagecorri()">커리큘럼</button>
+					<br />
+					<button class="btn_c non-click btn-outline-success m-3" onclick="pageprice()">가격</button>
+					<br />
+				</div>
+			</div>
+			</div>
+			</nav>
+		<!-- ------------------------------------------------------------------------------------ -->
+		<div id='wrapper'>
+		<div class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="content">
 			<div class="right col-8 m-4">
 				<!-- 메뉴 1 -->
 				<div id="menu1" style="display: block;">
@@ -136,10 +141,9 @@
 								<img id="insert-img"
 									src="${pageContext.request.contextPath}/resources/image/default.png"
 									style="width: 200px; height: 150px; curosr: pointer;"
-									class="mb-3" onclick="clickItemImage()" /> 
-									<input type="file"
+									class="mb-3" onclick="clickItemImage()" /> <input type="file"
 									name="file" id="file" class="form-control"
-									onchange="changeItemImage(this)"  >
+									onchange="changeItemImage(this)" >
 							</div>
 
 							<div>
@@ -187,8 +191,7 @@
 								<p class="sns_2" style="font-weight:bold;">SNS 링크 (선택)</p>
 								<!-- 가이드 라인 작성 -->
 								<div class="tool">
-									<span> 
-									<img id="insert-img"
+									<span> <img id="insert-img"
 										src="${pageContext.request.contextPath}/resources/image/물음표.png"
 										style="width: 20px; height: 20px; curosr: pointer;"> 도움말
 									</span>
@@ -312,7 +315,7 @@
 				</div>
 
 				<!-- 메뉴5 -->
-				<div id="menu5" style="display: none;">
+				<div id="menu5" style="display: none; height: 50vh;">
 					<div class="col-10" style="margin-top:50px;">
 						<div class="won_1">
 							<h6 style="display:inline; font-weight:bold;">가격
@@ -344,10 +347,12 @@
 				</div>
 
 			</div>
-		</div>
-		</div>
-		<!-- ---------------------------------------------------------- -->
+			</div>
 		
+		</div>
+		</div>
+		</div>
+		<!-- ---------------------------------------------------------------------------------- -->
 		<!-- Footer 영역 -->
 		<jsp:include page="../footer.jsp"></jsp:include>
 
@@ -1228,7 +1233,7 @@
  	/* $(".non-click").click(function({
 		$(".non-click").removeClass("click");
 		$(this).addClass("click");
-	}));  */
+	})); */
 		
 	/* button click 색상유지 함수 */
 		/* const nonClick = document.querySelectorAll(".non-click");
