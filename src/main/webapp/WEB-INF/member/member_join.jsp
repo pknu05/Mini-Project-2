@@ -70,7 +70,8 @@
 		</form>
 	</div>
 	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.5/axios.min.js"></script>
+		src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.5/axios.min.js">
+	</script>
 	<script>
 	var idcheck = 0 ;
 	

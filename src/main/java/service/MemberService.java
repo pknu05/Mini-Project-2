@@ -22,4 +22,5 @@ public interface MemberService {
 	
 	public int deleteMemberOne(Member obj);
 
+
 }

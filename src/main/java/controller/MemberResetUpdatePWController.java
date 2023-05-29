@@ -9,7 +9,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import mapper.MemberMapper;
 import service.MemberService;
-import serviceImpl.MemberServiceImpl;
 
 import java.io.IOException;
 
@@ -24,7 +23,7 @@ import dto.Member;
 public class MemberResetUpdatePWController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-		private MemberService mService =new MemberServiceImpl();
+		private MemberService mService =new service.MemberServiceImpl();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -45,11 +44,11 @@ public class MemberResetUpdatePWController extends HttpServlet {
 		obj.setNewpassword(hashNPw);
 		obj.setNewpassword(hashNPw1);
 		
-		int ret =MyBatisContext.getSqlSession().getMapper(MemberMapper.class).resetupdatePassword(obj);
+		int ret =MyBatisContext.getSqlSession().getMapper(MemberMapper.class).updateMemberPassword(obj);
 		
 		if(ret != 0 ) {
 			HttpSession httpsession = request.getSession();
-			httpsession.setAttribute("id" );
+			httpsession.setAttribute(hashNPw1, obj);
 		}
 		
 		
