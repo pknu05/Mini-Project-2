@@ -29,9 +29,9 @@
 		<table class="table table-hover">
 			<thead>
 				<tr>
-					<th scope="col">번호(시퀀스)</th>
+					<th scope="col">번호</th>
 					<th scope="col">신청번호</th>
-					<th scope="col">신청처리상태</th>
+					<th scope="col">신청 처리상태(1:결제완료, 2:결제취소, 3:참여완료)</th>
 					<th scope="col">상태등록일자</th>
 				</tr>
 			</thead>
